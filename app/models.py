@@ -41,9 +41,5 @@ class ClientParking(db.Model):  # type: ignore
     time_in: Optional[datetime] = db.Column(db.DateTime)
     time_out: Optional[datetime] = db.Column(db.DateTime)
     __table_args__ = (
-        db.UniqueConstraint(
-            "client_id",
-            "parking_id",
-            name="unique_client_parking"
-        ),
+        db.UniqueConstraint("client_id", "parking_id", name="unique_client_parking"),
     )
